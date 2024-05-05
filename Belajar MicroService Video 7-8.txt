@@ -1,0 +1,39 @@
+Belajar MicroService
+
+1. Remote Procedure Invocation
+	Suatu Service membutuhkan data di service lain dengan cara me-remote procedur invocation. 
+ Contoh dari Remote Procedur Invocation :
+ a. Restfull API (HTTP)
+ b. gRPC
+ c. Apache Thrift
+ d. SOAP
+ e. Java RMI
+ f. Corba
+	Komunikasi antar service bisa dilakukan dengan melalui RPI (Remote Procedure Invocation) atau RPC (Remote Procedure Call) service tersebut dapat memanggil service lainnya tanpa mengakses database dari service yang dibutuhhkan.
+
+2. Messaging
+	Service yang dibutuhkan data service lain yaitu order service membutuhkan pengiriman email dan sms dan setelah itu order service mengarahkannya ke postgre, jika order service ingin mengirimkan email maka akan langsung di kirimkan ke email service dan jika order service ingin mengirimkan sms maka order service akan mengirimkannya ke sms service
+ A.Masalah di Komunikasi RPI
+ 1).Proses lama 
+ 2).Mengirim data yg sama berkali-kali
+ 3).Membuat paralel process sangat rumit
+
+ B.Komunikasi dengan cara messaging
+ 1)Messaging biasanya digunakan untuk komunikasi async
+ 2)Async artinya komunikasi dilakukan tanpa harus menunggu selesai di proses
+ 3)Dalam async kadang tidak perlu peduli balasan dari service yg dituju
+ 4)Membutuhkan massage chanel sebagai jembatan untuk mengirim dan 	menerima data
+ 5)Direkomendasikan menggunakan aplikasi message broker untuk melakukan 	management massage chanel
+
+ C.Komunikasi menggunakan messaging
+ 1)Kita menginstall aplikasi message broker
+ 2)Setelah itu kita membuat message chanel di dalam nya
+ 3)Order service cukup mengirim data ke message chanel tanpa harus mengirim langsung ke service nya,service yg dituju cukup menerima data secara async
+ D.Contoh message broker
+ 1)Redis(PubSub)
+ 2)Apache Kafka
+ 3)RabbitMQ
+ 4)NSQ
+ 5)Google PubSub
+ 6)Amazon Web Service SQS
+

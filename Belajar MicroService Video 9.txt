@@ -1,0 +1,18 @@
+Tipe MicroService
+
+A.Stateless MicroService
+ 1.Tidak memiliki database -> bisa punya, tapi tidak wajib memiliki database
+ 2.Digunakan untuk melakukan tugas sederhana -> tugas yg tidk terlalu kompleks
+ 3.Bisa digunakan juga sbg utility untuk microserv lain -> utk kebutuhan sprti membantu service lain. 
+ 4.Tidak bergantung dgn microserv lain -> running secara independent karena tugas yg sederhana. 
+
+B.Persistence MicroService
+ 1.Biasanya memiliki database -> bertugas sbg master database yg mengolah data.
+ 2.Disebut master data microservice
+ 3.Biasa digunakan untuk mengolah data di database (CRUD)
+
+C.Aggregation MicroService
+ 1.tergantung dgn microservice lain
+ 2.biasanya igunakan sebgai pusat business logic aplikasi
+ 3.boleh memiliki database ataupun tidak
+ 4.tidak bisa berdiri sendiri
