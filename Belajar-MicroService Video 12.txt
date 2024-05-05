@@ -1,0 +1,20 @@
+API Gateway
+
+	API gateway merupakan solusi agar kita tidak perlu mengekspose semua microservice ke user. 
+API gateway adalah aplikasi yang bertugas sbg gerbang dari luar ke dalam. luar adalah akses dari internet, dan dalam dalah aplikasi microservice. API gateway bertugas sebagai proxy server ke semua aplikasi microservices. aplikasi microservice hanya bisa diakses dari luar melalui API gateway. 
+
+User - Internet - API gateway - MicroService
+
+Keuntungan implementasi API gateway
+-lebih aman karena hanya ada satu gerbang
+-service tidak perlu mengimplementasikan proses autentikasi, cukup dilakukan di api gateway.
+-api gateway juga bisa digunakansebgai load balancer
+-bisa digunakan sebagai rate limiter
+-bisa digunakan sebagai pengaman sehingga error dari service tidak terekspose. 
+
+Contoh api gateway :
+-nginx
+-apache httpd
+-kong
+-Netflix zuul
+-spring cloud gateway
